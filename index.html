@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071b16">
+  <meta name="description" content="El Handsa - منصة تعليم الرياضيات للمرحلة الثانوية">
+  <title>El Handsa منصة </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main id="app">
+    <section class="auth-shell" id="auth-screen">
+      <div class="brand brand-auth"><div class="brand-mark">∑</div><div><div class="brand-name">EL <span>HANDSA</span></div><div class="brand-sub">منصة الهندسة التعليمية</div></div></div>
+      <div class="auth-grid">
+        <div class="auth-copy">
+          <span class="eyebrow"><i></i> الرياضيات بطريقة مختلفة</span>
+          <h1>افهم الفكرة،<br><span>وأتقن الحل.</span></h1>
+          <p>رحلتك في الرياضيات تبدأ من هنا. دروس منظمة، شرح واضح، وخطوة جديدة نحو التفوق.</p>
+          <div class="auth-points"><span>✓ الصف الأول الثانوي</span><span>✓ الصف الثاني الثانوي</span><span>✓ الصف الثالث الثانوي</span></div>
+          <div class="teacher-mini"><img src="assets/teacher.jpg" alt="صورة معلم الرياضيات"><div><b>معلم الرياضيات</b><small>معك خطوة بخطوة نحو النجاح</small></div></div>
+        </div>
+        <div class="auth-card">
+          <div class="card-top"><span class="tiny-label">مرحباً بك في</span><h2>El Handsa</h2><p>اختر نوع حسابك للمتابعة</p></div>
+          <div class="role-switch">
+            <button class="role-btn active" data-role="student">طالب <span>🎓</span></button>
+            <button class="role-btn" data-role="teacher">معلم <span>✏️</span></button>
+          </div>
+          <form id="login-form">
+            <label for="email">البريد الإلكتروني</label><input id="email" type="email" placeholder="name@example.com" autocomplete="username" required>
+            <label for="password">كلمة المرور</label><div class="password-wrap"><input id="password" type="password" placeholder="أدخل كلمة المرور" autocomplete="current-password" required><button type="button" id="toggle-password" aria-label="إظهار كلمة المرور">◉</button></div>
+            <button class="primary-btn" type="submit" id="login-submit">تسجيل الدخول <span>←</span></button>
+          </form>
+          <div id="student-signup" class="signup-line">ليس لديك حساب طالب؟ <button id="signup-btn" type="button">إنشاء حساب</button></div>
+          <div class="secure-note">🔒 حساب المعلم مخصص للبريد الإلكتروني المعتمد فقط.</div>
+          <div id="auth-message" class="message" role="status"></div>
+        </div>
+      </div>
+      <footer class="auth-footer">© <span id="year"></span> EL HANDSA · جميع الحقوق محفوظة</footer>
+    </section>
+
+    <section id="dashboard-screen" class="dashboard hidden">
+      <aside class="sidebar">
+        <div class="brand"><div class="brand-mark">∑</div><div><div class="brand-name">EL <span>HANDSA</span></div><div class="brand-sub">منصة الهندسة</div></div></div>
+        <div class="side-user"><img src="assets/teacher.jpg" alt=""><div><b id="side-user-name">أهلاً بك</b><small id="side-user-role">طالب</small></div></div>
+        <nav><button class="nav-item active" data-view="library">▦ <span>المكتبة التعليمية</span></button><button class="nav-item teacher-only hidden" data-view="upload">＋ <span>رفع فيديو جديد</span></button></nav>
+        <div class="side-bottom"><div class="side-tip">💡 <span>كل درس جديد هو خطوة أقرب لهدفك.</span></div><button id="logout-btn" class="logout-btn">↪ تسجيل الخروج</button></div>
+      </aside>
+      <section class="main-area">
+        <header class="topbar"><div><span class="eyebrow">EL HANDSA / <span id="breadcrumb">المكتبة التعليمية</span></span><h1 id="welcome-title">أهلاً بك في عالم الرياضيات</h1></div><div class="top-user"><span class="online-dot"></span><span id="top-user-role">طالب</span><div class="avatar">∑</div></div></header>
+        <div id="library-view" class="view">
+          <div class="hero-banner"><div><span class="eyebrow light">LEARN · PRACTICE · EXCEL</span><h2>ابدأ من حيث أنت،<br>واستمر حتى <em>تتفوق.</em></h2><p>كل شروحاتك مرتبة في مكان واحد.</p></div><div class="hero-equation">∫ <span>π</span> ∑</div></div>
+          <div class="section-heading"><div><span class="eyebrow">YOUR CLASSROOM</span><h2>المكتبة التعليمية</h2></div><span id="video-count" class="count-pill">0 فيديو</span></div>
+          <div class="filters"><button class="filter active" data-grade="all">كل الصفوف</button><button class="filter" data-grade="1">الأول الثانوي</button><button class="filter" data-grade="2">الثاني الثانوي</button><button class="filter" data-grade="3">الثالث الثانوي</button><div class="search-wrap"><span>⌕</span><input id="search-input" type="search" placeholder="ابحث عن درس..."></div></div>
+          <div id="video-grid" class="video-grid"><div class="empty-state"><div class="empty-icon">∑</div><h3>جاري تحميل الدروس...</h3><p>لحظات ونجهز لك المكتبة التعليمية.</p></div></div>
+        </div>
+        <div id="upload-view" class="view hidden">
+          <div class="section-heading"><div><span class="eyebrow">TEACHER STUDIO</span><h2>إضافة درس جديد</h2><p>ارفع الفيديو من جهازك وأضف بيانات الدرس.</p></div></div>
+          <form id="upload-form" class="upload-card">
+            <label class="upload-zone" for="video-file"><div class="upload-symbol">↑</div><b>اضغط لاختيار الفيديو</b><span>يمكنك اختيار فيديو من الهاتف أو الكمبيوتر</span><small id="file-name">لم يتم اختيار ملف بعد</small><input id="video-file" type="file" accept="video/*" required></label>
+            <div class="form-grid"><div><label for="lesson-title">اسم الدرس</label><input id="lesson-title" type="text" placeholder="مثال: مقدمة في حساب المثلثات" required maxlength="100"></div><div><label for="lesson-grade">الصف الدراسي</label><select id="lesson-grade" required><option value="">اختر الصف</option><option value="1">الأول الثانوي</option><option value="2">الثاني الثانوي</option><option value="3">الثالث الثانوي</option></select></div></div>
+            <div><label for="lesson-description">وصف مختصر (اختياري)</label><textarea id="lesson-description" rows="3" maxlength="500" placeholder="اكتب نبذة بسيطة عن محتوى الدرس..."></textarea></div>
+            <div class="upload-actions"><span id="upload-status" class="muted">الصيغ المدعومة تعتمد على المتصفح والجهاز.</span><button class="primary-btn" type="submit" id="upload-submit">نشر الدرس <span>↑</span></button></div>
+            <div class="progress-track hidden" id="progress-track"><div id="progress-bar"></div></div>
+          </form>
+        </div>
+        <footer class="dashboard-footer">EL HANDSA <span>·</span> نصنع التفوق بالعلم والاجتهاد</footer>
+      </section>
+    </section>
+    <div id="video-modal" class="modal hidden"><div class="modal-backdrop" id="modal-backdrop"></div><div class="modal-box"><button id="close-modal" class="modal-close">✕</button><video id="lesson-player" controls playsinline></video><div class="modal-info"><span id="modal-grade" class="count-pill"></span><h3 id="modal-title"></h3><p id="modal-description"></p></div></div></div>
+    <div id="toast" class="toast"></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
